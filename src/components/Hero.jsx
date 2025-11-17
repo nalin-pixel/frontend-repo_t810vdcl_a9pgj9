@@ -1,4 +1,5 @@
 import Spline from '@splinetool/react-spline'
+import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
@@ -9,7 +10,12 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 items-center pt-28">
-          <div className="backdrop-blur-sm bg-white/60 rounded-2xl p-6 sm:p-8 shadow-[0_2px_30px_rgba(0,0,0,0.06)]">
+          <motion.div
+            initial={{ opacity: 0, y: 30, rotateX: -6 }}
+            animate={{ opacity: 1, y: 0, rotateX: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="backdrop-blur-sm bg-white/60 rounded-2xl p-6 sm:p-8 shadow-[0_2px_30px_rgba(0,0,0,0.06)]"
+          >
             <div className="inline-flex items-center gap-2 text-xs px-2.5 py-1.5 rounded-full border border-gray-200 bg-white/80 text-gray-700">
               <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
               PCI-ready fintech infrastructure
@@ -42,13 +48,18 @@ export default function Hero() {
                 <p className="text-xs text-gray-600">to start</p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           <div className="hidden lg:block" />
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white" />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white"
+      />
     </section>
   )
 }

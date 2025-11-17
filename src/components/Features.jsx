@@ -1,4 +1,6 @@
 import { ShieldCheck, CreditCard, Globe2, Cpu } from 'lucide-react'
+import TiltCard from './TiltCard'
+import SectionReveal from './SectionReveal'
 
 const features = [
   {
@@ -25,7 +27,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-white">
+    <SectionReveal className="py-20 bg-white" id="features">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900">Everything you need to ship fast</h2>
@@ -34,16 +36,16 @@ export default function Features() {
 
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <TiltCard key={title} className="rounded-2xl border border-gray-200 p-6 bg-white hover:shadow-xl">
               <div className="h-10 w-10 rounded-lg bg-gray-900 text-white flex items-center justify-center">
                 <Icon size={20} />
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900">{title}</h3>
               <p className="mt-2 text-sm text-gray-600">{desc}</p>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>
-    </section>
+    </SectionReveal>
   )
 }

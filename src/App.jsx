@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Pricing from './components/Pricing'
 import Footer from './components/Footer'
+import SectionReveal from './components/SectionReveal'
 
 function App() {
   return (
@@ -10,8 +11,12 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Features />
-        <Pricing />
+        <SectionReveal>
+          <Features />
+        </SectionReveal>
+        <SectionReveal>
+          <Pricing />
+        </SectionReveal>
       </main>
       <Footer />
     </div>
